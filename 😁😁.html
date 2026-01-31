@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Start Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .screen {
+      display: none;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    #start {
+      display: block;
+    }
+
+    button {
+      padding: 15px 35px;
+      font-size: 18px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .loading {
+      font-size: 22px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0.4; }
+    }
+
+    .gotcha {
+      margin-top: 15px;
+      font-size: 26px;
+      color: red;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Start Screen -->
+  <div id="start" class="screen">
+    <button onclick="startGame()">🎮 Start Game</button>
+  </div>
+
+  <!-- Loading Screen -->
+  <div id="loading" class="screen">
+    <div class="loading">Loading game...</div>
+  </div>
+
+  <!-- Prank Screen -->
+  <div id="prank" class="screen">
+
+    <!-- Tenor GIF Embed -->
+    <div class="tenor-gif-embed"
+         data-postid="27340732"
+         data-share-method="host"
+         data-aspect-ratio="1.77778"
+         data-width="100%">
+      <a href="https://tenor.com/view/sourface-bradley-hall-its-too-sour-funny-face-taste-bad-gif-27340732">
+        Sourface Bradley Hall Sticker
+      </a>
+      from <a href="https://tenor.com/search/sourface-stickers">Sourface Stickers</a>
+    </div>
+
+    <div class="gotcha">GOTCHA 😈</div>
+  </div>
+
+  <!-- Tenor Script -->
+  <script async src="https://tenor.com/embed.js"></script>
+
+  <script>
+    function startGame() {
+      document.getElementById("start").style.display = "none";
+      document.getElementById("loading").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("prank").style.display = "block";
+      }, 3000);
+    }
+  </script>
+
+</body>
+</html>
